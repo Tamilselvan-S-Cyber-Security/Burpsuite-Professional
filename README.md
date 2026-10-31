@@ -1,190 +1,292 @@
-![Screenshot_2024-09-19_17_45_09](https://github.com/user-attachments/assets/873ef98a-48e0-445b-b5dc-eb5959ad5b34)
 
 <div align="center">
 
-# $${\color{orange}Burpsuite-Professional-v2026-latest}$$
+<img src="https://github.com/user-attachments/assets/873ef98a-48e0-445b-b5dc-eb5959ad5b34" width="180" alt="Burp Suite Logo">
+
+# <span style="color:orange">Burp Suite Professional v2026</span>
+
+### Cyber Wolf | Advanced Web Application Security Testing
+
+![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Web%20Security-blue)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-green)
+![Research](https://img.shields.io/badge/Research-Ethical%20Hacking-orange)
+![Organization](https://img.shields.io/badge/Organization-Cyber%20Wolf-black)
+
 </div>
 
-<p align="center"> Burp Suite Professional is the web security tester's toolkit of choice. Use it to automate repetitive testing tasks - then dig deeper with its expert-designed manual and semi-automated security testing tools. Burp Suite Professional can help you to test for OWASP Top 10 vulnerabilities - as well as the very latest hacking techniques. Advanced manual and automated features empower users to find lurking vulnerabilities more quickly. Burp Suite is designed and used by the industry's best.</p>
+<p align="center">
+Burp Suite Professional is a comprehensive web security testing toolkit. It combines automated vulnerability scanning with expert-designed manual and semi-automated testing tools to help security professionals identify and investigate web application vulnerabilities, including OWASP Top 10 security risks.
+</p>
 
 <h3 align="center">
 
-[Overview](https://portswigger.net/burp/pro)
+[Official Overview](https://portswigger.net/burp/pro) •
+[Documentation](https://portswigger.net/burp/documentation) •
+[Web Security Academy](https://portswigger.net/web-security)
+
 </h3>
- 
-<br>
-<br>
 
-#  $${\color{magenta}Linux-Installation}$$
-```sh
-sudo apt update && sudo apt install -y wget && wget -qO- https://raw.githubusercontent.com/xiv3r/Burpsuite-Professional/main/install.sh | sudo bash
-```
-## Run
-```sh
-burpsuitepro
-```
-<details><summary></summary>
+---
 
-## Update
-> optional
+# 📸 Screenshots
+
+<div align="center">
+
+### Burp Suite Professional
+
+![Burp Suite Screenshot](https://github.com/user-attachments/assets/873ef98a-48e0-445b-b5dc-eb5959ad5b34)
+
+</div>
+
+### Additional Application Screenshots
+
+Add your screenshots to the `screenshots/` directory.
+
+| Interface | Screenshot |
+|---|---|
+| Dashboard | `screenshots/dashboard.png` |
+| Proxy | `screenshots/proxy.png` |
+| Repeater | `screenshots/repeater.png` |
+| Intruder | `screenshots/intruder.png` |
+| Target | `screenshots/target.png` |
+| Scanner | `screenshots/scanner.png` |
+
+---
+
+# 🐧 Linux Installation
+
+### Step 1: Update System
+
+```bash
+sudo apt update && sudo apt upgrade -y
 ```
-cd && sudo rm -rf Burpsuite-Professional && wget -qO- https://raw.githubusercontent.com/xiv3r/Burpsuite-Professional/refs/heads/main/update.sh | sudo bash
+
+### Step 2: Install Dependencies
+
+```bash
+sudo apt install -y wget curl unzip
 ```
- 
-## Java Version
-> select the default openjdk runtime
+
+### Step 3: Download
+
+Visit the official PortSwigger download page:
+
+https://portswigger.net/burp/pro
+
+Download the Linux installer.
+
+### Step 4: Install
+
+```bash
+chmod +x burpsuite_pro_linux_*.sh
+./burpsuite_pro_linux_*.sh
 ```
+
+Follow the installation wizard.
+
+### Step 5: Run
+
+Launch Burp Suite Professional from your applications menu.
+
+### Java Configuration
+
+```bash
 sudo update-alternatives --config java
-```               
-</details>
-
-## Setup Licenses
-
-<div align="center">
- 
-https://github.com/xiv3r/Burpsuite-Professional/assets/117867334/c25831a4-68a2-44ee-b6dd-5ff18165f340
-</div>
- 
-Note: Copy the license from loader to the burpsuite > manual activation > copy burpsuite request key to loader request >  copy response key to the burpsuite.
-
-<br>
-
-## Shortcut Launcher - (xfce)
-right click the desktop -> create a launcher name it Burpsuite Professional, add command `burpsuitepro` and select burpsuite community icon.
-
-<div align="center">
- <img width="500" height="500" src="https://github.com/xiv3r/Burpsuite-Professional/blob/main/Launcher.jpg">
-</div>
-
-<br>
-<br>
-
----------
-
-#  $${\color{magenta}NixOS-Installation}$$
-
-## Add this repo's flake to your flake inputs
-```
-# flake.nix
-{
-  # ...
-  inputs = {
-    burpsuitepro = {
-      type = "github";
-      owner = "xiv3r";
-      repo = "Burpsuite-Professional";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-  # ...
-}
 ```
 
-## Installing the package provided by the flake
-## You can install it with either `environment.systemPackages` or `home.packages`
-> With `environment.systemPackages` (nixosModules)
+---
 
-  ```
-    { inputs, ... }: {
-      environment.systemPackages = [
-        inputs.burpsuitepro.packages.${system}.default
-      ];
-    }
-  ```
+# ❄️ NixOS Installation
 
-> With `home.packages` (home-manager)
- ```
-    { inputs, ... }: {
-      home.packages = [
-        inputs.burpsuitepro.packages.${system}.default
-      ];
-    }
-  ```
+Download the official Linux installer from PortSwigger and install it in a supported NixOS environment.
 
-NOTE: `loader.jar` is symlinked to `burpsuite.jar` so burpsuite recognizes the license keys. You can access the `loader` command from the terminal only
+### Requirements
 
-<br>
-<br>
+- NixOS
+- Java runtime as required by the application
+- Burp Suite Professional installer
+- Valid PortSwigger license
 
-----------
+Refer to the official documentation:
 
-# $${\color{magenta}Windows-Installation}$$
- 
-- Make a `Burp` directory name in `C Drive` for faster access.
+https://portswigger.net/burp/documentation
 
-- Download [install.ps1](https://codeload.github.com/xiv3r/Burpsuite-Professional/zip/refs/heads/main) and extract move the file inside to `C:\Burp`
+---
 
-- Open `Powershell` as administrator and execute below command to set Script Execution Policy.
+# 🪟 Windows Installation
 
+### Step 1: Download
 
-      Set-ExecutionPolicy -ExecutionPolicy bypass -Scope process
+Download the Windows installer:
 
-- Inside PowerShell go to `cd C:\Burp`
+https://portswigger.net/burp/pro
 
-- Now Execute `install.ps1` file in Powershell to Complete Installation.
+### Step 2: Install
 
-      ./install.ps1
- 
-- Change the icon of `Burp-Suite-Pro.vbs` to the given icon 
+1. Open the downloaded installer.
+2. Follow the installation wizard.
+3. Select the installation directory.
+4. Complete the installation.
 
-- Create a shortcut to Desktop. Right Click over `Burp-Suite-Pro.vbs` Go to Shortcut tab, and below there is `Change Icon` tab
+### Step 3: Launch
 
-- Click there and choose the `burp-suite.ico` from `C:\Burp\`
+Open Burp Suite Professional from the Windows Start Menu.
 
-   <div align="center">
-    
-    <img src="https://user-images.githubusercontent.com/29830064/230825172-16c9cfba-4bca-46a4-86df-b352a4330b12.png">
-</div>
+### Step 4: Activation
 
-- For Start Menu Entry, copy `Burp-Suite-Pro.vbs` file to 
+Activate using your legitimate PortSwigger license.
 
-      C:\ProgramData\Microsoft\Windows\Start Menu\Programs\
+---
 
-<br>
-<br>
+# 🍎 macOS Installation
 
-------------
-
-# $${\color{magenta}MacOS-Installation}$$ 
-
-## Step 1: Install Dependencies with Homebrew
-Install Homebrew and required dependencies (`git`, `openjdk@17`).
+### Step 1: Install Homebrew (Optional)
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install git openjdk@17
 ```
 
-## Step 2: Run the Installation Script
-Clone the Burp Suite Professional repository, download the Burp Suite JAR file, and execute the key generator and Burp Suite.
+### Step 2: Download
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/xiv3r/Burpsuite-Professional/main/install_macos.sh | bash
+Visit:
+
+https://portswigger.net/burp/pro
+
+Select the macOS installer.
+
+### Step 3: Install
+
+Open the downloaded installer and follow the installation wizard.
+
+### Step 4: Launch
+
+Open Burp Suite Professional from Applications.
+
+---
+
+# ⚙️ Initial Configuration
+
+### Default Proxy Settings
+
+```text
+Host: 127.0.0.1
+Port: 8080
+Protocol: HTTP
 ```
 
-## Step 3: Install the `burp` Shortcut
-Make the `burp` script executable and install it globally.
+### Browser Configuration
 
-```bash
-chmod +x burp
-sudo cp burp /usr/local/bin/burp
+1. Start Burp Suite.
+2. Configure your dedicated browser profile to use the Burp proxy.
+3. Visit `http://burpsuite`.
+4. Download the Burp CA certificate.
+5. Import it into the dedicated testing browser profile.
+
+Only intercept traffic belonging to authorized testing environments.
+
+---
+
+# 🛠️ Main Features
+
+| Tool | Purpose |
+|---|---|
+| Proxy | HTTP/HTTPS interception |
+| Repeater | Manual request testing |
+| Intruder | Automated testing |
+| Scanner | Vulnerability scanning |
+| Decoder | Encoding and decoding |
+| Comparer | Response comparison |
+| Sequencer | Token randomness analysis |
+| Target | Application mapping |
+| Extensions | Additional functionality |
+
+---
+
+# 🔬 Security Testing Areas
+
+- SQL Injection
+- Cross-Site Scripting (XSS)
+- Cross-Site Request Forgery (CSRF)
+- Insecure Direct Object References (IDOR)
+- Server-Side Request Forgery (SSRF)
+- Authentication Testing
+- Authorization Testing
+- File Upload Security
+- Session Management
+- Access Control Testing
+
+---
+
+# 📂 Repository Structure
+
+```text
+Burp-Suite-Professional/
+│
+├── README.md
+│
+├── screenshots/
+│   ├── dashboard.png
+│   ├── proxy.png
+│   ├── repeater.png
+│   ├── intruder.png
+│   ├── target.png
+│   └── scanner.png
+│
+└── docs/
+    ├── linux-installation.md
+    ├── windows-installation.md
+    ├── macos-installation.md
+    ├── nixos-installation.md
+    ├── proxy-configuration.md
+    └── security-testing.md
 ```
 
-**Explanation**:
-- The `installmacos.sh` script creates a `burp` script to run Burp Suite with required Java options.
-- Uses `$(pwd)` to reference JAR files in the current directory.
-- Makes the script executable and copies it to `/usr/local/bin` for global access.
+---
 
+# 📚 Official Resources
 
-## Notes
-- **Running the Shortcut**: Run `burp` from the `Burpsuite-Professional` directory containing `loader.jar` and `burpsuite_pro_v2025.5.6.jar`. For global use, replace `$(pwd)` with absolute paths.
+- [Burp Suite Professional](https://portswigger.net/burp/pro)
+- [PortSwigger Documentation](https://portswigger.net/burp/documentation)
+- [Web Security Academy](https://portswigger.net/web-security)
+- [PortSwigger Research](https://portswigger.net/research)
 
-## Contributors 
+---
 
-<a href="https://github.com/xiv3r/Burpsuite-Professional/graphs/contributors">
-  <img src="https://contrib.rocks/image?&columns=25&max=10000&&repo=xiv3r/Burpsuite-Professional" alt="contributors"/>
-</a>
+# ⚖️ Disclaimer
 
-## Credits
-- Loader.jar 👉 [h3110w0r1d-y](https://github.com/h3110w0r1d-y/BurpLoaderKeygen)
-- Script 👉 [cyb3rzest](https://github.com/cyb3rzest/Burp-Suite-Pro)
+This repository is intended for educational purposes, cybersecurity research, and authorized penetration testing.
+
+- Always obtain permission before testing systems.
+- Do not perform unauthorized security assessments.
+- Do not distribute cracked software or unauthorized license keys.
+- Respect PortSwigger's licensing terms.
+- Follow applicable cybersecurity laws.
+
+Burp Suite Professional is proprietary software developed by PortSwigger.
+
+---
+
+# 👨‍💻 Author & Organization
+
+<div align="center">
+
+## 🐺 CYBER WOLF
+
+### Tamilselvan S
+**Founder & CEO | Cybersecurity Researcher | VAPT Analyst**
+
+[Website](https://cyberwolf360.in) •
+[GitHub](https://github.com/Tamilselvan-S-Cyber-Security) •
+[LinkedIn](https://linkedin.com/in/tamil-selvan-383618304)
+
+### LEARN. SECURE. BUILD.
+
+</div>
+
+---
+
+<div align="center">
+
+**Cyber Wolf | Cybersecurity Research & Development**
+
+</div>
