@@ -1,7 +1,11 @@
 
-<div align="center">
 
-<img src="https://github.com/user-attachments/assets/873ef98a-48e0-445b-b5dc-eb5959ad5b34" width="180" alt="Burp Suite Logo">
+
+<div align="center">
+  <img src="https://media.tenor.com/McPQygGOuXYAAAAj/gladgers-hacker-gers-guardians-of-galaxy.gif"
+       width="180"
+       alt="Cyber Wolf Hacker Animation">
+
 
 # <span style="color:orange">Burp Suite Professional v2026</span>
 
