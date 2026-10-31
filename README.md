@@ -43,13 +43,9 @@ Burp Suite Professional is a comprehensive web security testing toolkit. It comb
 </div>
 <div align="center">
   <img src="https://i.pinimg.com/originals/15/19/95/15199572cf0639288f135adab038a523.gif"
-       width="180"
+       width="350"
+       height="350"
        alt="Cyber Wolf Hacker Animation">
-
-  <h1>Burp Suite Professional</h1>
-  <h3>Cyber Wolf | Web Application Security Testing</h3>
-
-  <p><b>Learn. Secure. Build.</b></p>
 </div>
 ### Additional Application Screenshots
 
